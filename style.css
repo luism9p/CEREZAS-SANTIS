@@ -167,7 +167,32 @@ a {
     align-items: center;
     padding-top: var(--nav-height);
     overflow: hidden;
-    background: radial-gradient(circle at 70% 30%, #e01e3e 0%, #a80c26 100%);
+}
+
+/* Ken Burns Effect - Animated Background */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/FOTOS/fondo.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    animation: kenBurns 20s ease-in-out infinite alternate;
+    z-index: -1;
+}
+
+@keyframes kenBurns {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
 }
 
 .hero-container {
@@ -246,10 +271,10 @@ a {
     animation: float 6s ease-in-out infinite;
 }
 
-/* Benefits Section */
+/* Benefits Section - White Theme for Visual Break */
 .benefits {
     padding: var(--section-spacing) 0;
-    background-color: var(--color-bg);
+    background-color: #FFFFFF;
 }
 
 .benefits-grid {
@@ -260,36 +285,43 @@ a {
 }
 
 .benefit-card {
-    /* No initial hidden state for visibility guarantee */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.benefit-card.revealed {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .icon-box {
     margin-bottom: 24px;
-    color: white;
+    color: #8a0c20;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(138, 12, 32, 0.2);
+    background-color: rgba(138, 12, 32, 0.05);
 }
 
 .benefit-icon {
     width: 32px;
     height: 32px;
-    stroke: var(--color-gold);
+    stroke: #8a0c20;
 }
 
 .benefit-card h3 {
     font-size: 1.4rem;
     margin-bottom: 12px;
-    color: white;
+    color: #1a1a1a;
 }
 
 .benefit-card p {
-    color: var(--color-text-muted);
+    color: #555555;
     font-weight: 300;
 }
 
@@ -320,12 +352,10 @@ a {
     line-height: 1;
     margin-bottom: 24px;
     text-transform: uppercase;
-    color: white;
 }
 
 .story-desc {
     font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.9);
     max-width: 450px;
     font-weight: 300;
 }
@@ -343,52 +373,67 @@ a {
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
 }
 
-/* BLOCK A: Explosion */
+/* BLOCK A: Explosion - White Theme */
 .block-a {
-    background-color: var(--color-bg);
-    /* Red Base */
+    background-color: #FFFFFF;
 }
 
-/* Masking for F1 to blend light background into red */
+.block-a .story-title {
+    color: #1a1a1a;
+}
+
+.block-a .story-desc {
+    color: #444444;
+}
+
 .block-a .story-img {
-    -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
-    mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
-    object-fit: contain;
-    /* Ensure full image is contained if needed */
+    transform: scale(0.95);
+    transition: transform 0.8s ease-out;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
 }
 
-/* BLOCK B */
+.block-a .story-img.scale-in {
+    transform: scale(1);
+}
+
+/* BLOCK B: Full-Width Immersion with Fixed Background */
 .block-b {
     padding: 0;
-    height: 80vh;
+    height: 100vh;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .full-width-banner {
     width: 100%;
     height: 100%;
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .banner-img {
     width: 100%;
-    height: 100%;
+    height: 120%;
     object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 .banner-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1;
 }
 
 .banner-title {
@@ -396,13 +441,41 @@ a {
     color: white;
     text-transform: uppercase;
     text-align: center;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    letter-spacing: 2px;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+    letter-spacing: 4px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-/* BLOCK C */
+.banner-title.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* BLOCK C: Deep Black Luxury Finish */
 .block-c {
-    background-color: var(--color-bg-dark);
+    background-color: #111111;
+}
+
+.block-c .story-title {
+    color: #FFFFFF;
+}
+
+.block-c .story-title br+.text-accent,
+.block-c .story-desc {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.block-c .story-img {
+    filter: drop-shadow(0 0 40px rgba(200, 170, 100, 0.3)) drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
+    transform: scale(0.95);
+    transition: transform 0.8s ease-out, filter 0.8s ease-out;
+}
+
+.block-c .story-img.scale-in {
+    transform: scale(1);
+    filter: drop-shadow(0 0 60px rgba(212, 175, 55, 0.4)) drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
 }
 
 .inverted-grid {
@@ -413,12 +486,12 @@ a {
     direction: ltr;
 }
 
-/* Footer */
+/* Footer - Deep Black Continuation */
 footer {
-    background-color: var(--color-bg-dark);
+    background-color: #111111;
     padding: 80px 0 40px;
     color: white;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .footer-content {
@@ -442,7 +515,7 @@ footer {
 .footer-brand span {
     font-family: var(--font-heading);
     font-weight: 700;
-    color: white;
+    color: var(--color-gold);
     letter-spacing: 2px;
 }
 
@@ -457,10 +530,11 @@ footer {
     color: rgba(255, 255, 255, 0.7);
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: white;
+    color: var(--color-gold);
 }
 
 .copyright {
@@ -485,24 +559,19 @@ footer {
     .story-grid {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 60px;
+        gap: 40px;
     }
 
     .story-desc {
         margin: 0 auto;
     }
 
-    .hero-card {
-        padding: 30px;
-    }
-
-    .hero-img {
-        width: 100%;
-        max-width: 300px;
-    }
-
     .hero-title {
-        font-size: 3rem;
+        font-size: 2.8rem;
+    }
+
+    .hero-title .word {
+        display: inline-block;
     }
 
     .benefits-grid {
@@ -512,11 +581,26 @@ footer {
 
     .inverted-grid {
         direction: ltr;
-        /* Visual adjustments for mobile stacking order if needed, but text/image stack is fine */
     }
 
+    /* Block B: Use scroll instead of fixed for mobile (iOS compatibility) */
     .block-b {
-        height: 50vh;
+        height: 60vh;
+    }
+
+    .banner-img {
+        position: absolute;
+        height: 100%;
+    }
+
+    .banner-title {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+        padding: 0 20px;
+    }
+
+    .story-title {
+        font-size: 2.5rem;
     }
 
     .nav-links {
