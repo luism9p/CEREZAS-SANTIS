@@ -55,45 +55,54 @@
         </div>
     </header>
 
-    <!-- Benefits Section (Restored & Visible) -->
+    <!-- Benefits Section - Nutrition Selling Points -->
     <section id="descubre" class="benefits">
         <div class="container">
+            <div class="section-header">
+                <span class="section-label">Nutrición</span>
+                <h2 class="section-title">Libre de Culpa</h2>
+            </div>
             <div class="benefits-grid">
                 <div class="benefit-card">
                     <div class="icon-box">
+                        <!-- Feather/Light Icon -->
                         <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M2 22s10-4 12-14c0 0-4 10-14 12z"></path>
-                            <path d="M14 8c-3 0-5 2-9 2"></path>
-                            <path d="M14 8v13"></path>
+                            <path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path>
+                            <line x1="16" y1="8" x2="2" y2="22"></line>
+                            <line x1="17.5" y1="15" x2="9" y2="15"></line>
                         </svg>
                     </div>
-                    <h3>Ligereza Pura</h3>
-                    <p>Solo 10 kcal por porción.<br>0% Grasa.</p>
+                    <h3>Ligereza</h3>
+                    <p class="benefit-highlight">Solo 10 kcal</p>
+                    <p class="benefit-detail">por cereza</p>
                 </div>
                 <div class="benefit-card">
                     <div class="icon-box">
-                        <!-- Map/USA Icon -->
+                        <!-- Heart/No Fat Icon -->
                         <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                            </path>
                         </svg>
                     </div>
-                    <h3>Origen Premium</h3>
-                    <p>Cultivadas en el corazón de<br>Oregon, EE.UU.</p>
+                    <h3>Libre de Culpa</h3>
+                    <p class="benefit-highlight">0% Grasa</p>
+                    <p class="benefit-detail">0mg de Sodio</p>
                 </div>
                 <div class="benefit-card">
                     <div class="icon-box">
-                        <!-- Seal/Legacy Icon -->
+                        <!-- Check/Pure Icon -->
                         <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"></circle>
-                            <path d="M12 6v12"></path>
-                            <path d="M16.24 7.76l-8.48 8.48"></path>
+                            <polyline points="9 12 11 14 15 10"></polyline>
                         </svg>
                     </div>
-                    <h3>Legado</h3>
-                    <p>Tradición de calidad<br>desde 1960.</p>
+                    <h3>Pura Fruta</h3>
+                    <p class="benefit-highlight">100%</p>
+                    <p class="benefit-detail">Frutos seleccionados importados</p>
                 </div>
             </div>
         </div>
@@ -102,16 +111,19 @@
     <!-- Visual Storytelling Section -->
     <main class="visual-storytelling">
 
-        <!-- BLOCK A: Explosion (2 Cols) -->
-        <section class="story-block block-a">
+        <!-- BLOCK A: Origin - Corazón de Oregon -->
+        <section id="origen" class="story-block block-a">
             <div class="container story-grid">
                 <div class="story-text">
-                    <h2 class="story-title">Explosión<br>de Sabor</h2>
-                    <p class="story-desc">Cada cereza es una bomba de dulzura y textura. Perfectas para elevar el nivel
-                        de tus cocteles favoritos o dar el toque final a postres gourmet.</p>
+                    <span class="story-label">Origen</span>
+                    <h2 class="story-title">Corazón<br>de Oregon</h2>
+                    <p class="story-desc">Cultivadas en el fértil valle de Willamette en Salem, Oregon. Nuestras cerezas
+                        son cosechadas por <strong>'Oregon Cherry Growers'</strong>, una cooperativa de familias
+                        agricultoras con tradición desde 1932, y seleccionadas una a una para garantizar la firmeza y el
+                        brillo perfecto.</p>
                 </div>
                 <div class="story-visual">
-                    <img src="/FOTOS/F1.png" alt="Explosión de Sabor" class="story-img">
+                    <img src="/FOTOS/F1.png" alt="Cerezas de Oregon" class="story-img">
                 </div>
             </div>
         </section>
@@ -126,16 +138,55 @@
             </div>
         </section>
 
-        <!-- BLOCK C: Detail (2 Cols Inverted) -->
-        <section class="story-block block-c">
+        <!-- BLOCK C: Suggested Uses / Inspiración -->
+        <section id="recetas" class="story-block block-c">
             <div class="container story-grid inverted-grid">
                 <div class="story-visual">
-                    <img src="/FOTOS/F5.png" alt="Detalle Perfecto" class="story-img">
+                    <img src="/FOTOS/F5.png" alt="Coctelería Premium" class="story-img">
                 </div>
                 <div class="story-text">
-                    <h2 class="story-title">El Detalle<br>Perfecto</h2>
+                    <span class="story-label">Inspiración</span>
+                    <h2 class="story-title">El Arte<br>del Detalle</h2>
                     <p class="story-desc">No es solo una decoración, es el sello de calidad que distingue una
                         presentación ordinaria de una obra maestra culinaria.</p>
+                    <div class="use-cases">
+                        <div class="use-case">
+                            <span class="use-icon">🍸</span>
+                            <p>El toque final para tu <strong>Manhattan</strong> o <strong>Old Fashioned</strong>.</p>
+                        </div>
+                        <div class="use-case">
+                            <span class="use-icon">🎂</span>
+                            <p>La corona perfecta para <strong>repostería de autor</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specifications Section -->
+        <section class="specifications">
+            <div class="container">
+                <div class="specs-header">
+                    <span class="section-label">Especificaciones</span>
+                    <h2 class="section-title">Detalles del Producto</h2>
+                </div>
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <div class="spec-icon">📦</div>
+                        <h4>Presentación</h4>
+                        <p>Frasco de vidrio premium</p>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-icon">⚖️</div>
+                        <h4>Contenido</h4>
+                        <p><strong>283g</strong> Neto<br><strong>138g</strong> Drenado</p>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-icon">🍒</div>
+                        <h4>Ingredientes</h4>
+                        <p>Cerezas premium, almíbar de maíz, toques de ácido cítrico para balancear la dulzura y
+                            colorante rojo Allura para ese acabado joya.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -143,7 +194,7 @@
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer id="contacto">
         <div class="container footer-content">
             <div class="footer-brand">
                 <img src="/FOTOS/logo.webp" alt="Santis Logo Small" class="footer-logo">
